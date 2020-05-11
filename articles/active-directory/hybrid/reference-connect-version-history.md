@@ -43,6 +43,7 @@ Not all releases of Azure AD Connect will be made available for auto upgrade. Th
 >
 >Please refer to [this article](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-upgrade-previous-version) to learn more about how to upgrade Azure AD Connect to the latest version.
 
+
 ## 1.5.30.0
 
 ### Release status
@@ -50,9 +51,7 @@ Not all releases of Azure AD Connect will be made available for auto upgrade. Th
 
 ### Fixed issues
 - Fixed an issue where unselected domains were getting incorrectly selected from the wizard UI.
-- Fixed an issue in the ADSyncConfig PowerShell module, where invoking DSACLS command used in all the Set-ADSync* Permissions cmdlets would cause one of the following errors:
-     - `GrantAclsNoInheritance : The parameter is incorrect.   The command failed to complete successfully.`
-     - `GrantAcls : No GUID Found for computer …`
+
 
 ## 1.5.29.0
 
@@ -62,6 +61,7 @@ Not all releases of Azure AD Connect will be made available for auto upgrade. Th
 ### Fixed issues
 This hotfix build fixes an issue introduced in build 1.5.20.0 where a tenant administrator with MFA was not able to enable DSSO.
 
+
 ## 1.5.22.0
 
 ### Release status
@@ -70,13 +70,17 @@ This hotfix build fixes an issue introduced in build 1.5.20.0 where a tenant adm
 ### Fixed issues
 This hotfix build fixes an issue in build 1.5.20.0 if you have cloned the **In from AD - Group Join** rule and have not cloned the **In from AD - Group Common** rule.
 
+
 ## 1.5.20.0
 
 ### Release status
 04/09/2020: Released for download
 
 ### Fixed issues
-This hotfix build fixes an issue with build 1.5.18.0 if you have the Group Filtering feature enabled and use mS-DS-ConsistencyGuid as the source anchor.
+- Fixed an issue in the ADSyncConfig PowerShell module, where invoking DSACLS command used in all the Set-ADSync* Permissions cmdlets would cause one of the following errors:
+     - `GrantAclsNoInheritance : The parameter is incorrect.   The command failed to complete successfully.`
+     - `GrantAcls : No GUID Found for computer …`
+- Fixed an issue with build 1.5.18.0 if you have the Group Filtering feature enabled and use mS-DS-ConsistencyGuid as the source anchor.
 
 > [!IMPORTANT]
 > If you have cloned the **In from AD - Group Join** sync rule and have not cloned the **In from AD - Group Common** sync rule and plan to upgrade, complete the following steps as part of the upgrade:
